@@ -1,0 +1,28 @@
+$historic_logo: -4px -282px 204px 199px
+$logo_aboutus: -216px -282px 143px 137px
+$values_decoration: -367px -282px 264px 10px
+$whoweare_img: -4px -4px 460px 270px
+$woolworth: -472px -4px 460px 270px
+
+=sprite-width($sprite)
+  width: nth($sprite, 3)
+
+=sprite-height($sprite)
+  height: nth($sprite, 4)
+
+=sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 1)
+  $sprite-offset-y: nth($sprite, 2)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+=sprite($sprite)
+  +sprite-position($sprite)
+  background-repeat: no-repeat
+  overflow: hidden
+  display: block
+  +sprite-width($sprite)
+  +sprite-height($sprite)
+
+.sprite-aboutus
+  background-image: url('/img/sprites/_aboutus.png')
+

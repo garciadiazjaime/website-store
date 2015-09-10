@@ -1,0 +1,16 @@
+{% load i18n %}
+{% load currency_filters %}
+
+<p>
+    {% if basket.is_empty %}
+        {% trans "Your basket is now empty" %}
+    {% else %}
+        {% trans "Your basket has been updated" %}
+    {% endif %}
+</p>
+
+{% if include_buttons %}
+<p>
+    <a href="{% url 'basket:summary' %}" class="btn btn-info">{% trans "View basket" %}</a>
+</p>
+{% endif %}

@@ -1,0 +1,413 @@
+/* ****************** HOME ************** */
+/* ----------- Carousel ----------- */
+#homeCarousel
+  background: $blue
+  color: white
+  font-size: 13px
+  height: 580px
+
+  .container
+    padding-left: 80px
+
+  .carousel-control
+    display: none
+
+  .item
+    min-height: 580px
+    padding: 17px 0 0
+    z-index: 3
+
+    &:last-child
+      .yellowButton
+        margin-top: 30px
+
+      blockquote
+        margin: 85px 0 30px -90px
+
+  p
+    line-height: 1.6em
+    max-width: 365px
+
+  .common
+    @extend %asap
+    margin-top: 10px
+    font-size: 13px
+    line-height: 1.3em
+    position: relative
+
+    p
+      line-height: 1.5em
+      margin: 0 0 50px
+      max-width: 140px
+      position: relative
+      left: -40px
+
+  .stationLogo
+    @extend .sprite-home
+    left: -10px
+    margin-bottom: 40px
+    position: relative
+
+  h3
+    @extend %titilliumweb-bold
+    font-size: 70px
+
+    span
+      display: block
+
+  .redButton
+    margin-top: 10px
+
+.carousel-indicators
+  margin: 0 0 0 477px
+  top: 40px
+  width: 20px
+
+  li
+    background: white
+    border: none
+    display: block
+    height: 14px
+    margin: 0 0 10px auto
+    width: 14px
+
+    &:hover, &:focus, &:active
+      background: $red
+
+  li.active
+    background: $red
+    border: none
+    margin: 0 0 10px auto
+
+#homeCarousel-extinguishers
+  background: url(#{$img}home-slider/banner1.jpg) center top no-repeat
+  background-size: cover
+
+#homeCarousel-equipment
+  background: url(#{$img}home-slider/banner2.jpg) center top no-repeat
+  background-size: cover
+
+#homeCarousel-catalog
+  background: url(#{$img}home-slider/banner3.jpg) center top no-repeat
+  background-size: cover
+
+.stationLogo
+  @extend .isAnImage
+  background-position: nth($station-logo, 1) nth($station-logo, 2)
+  width: nth($station-logo, 3)
+  height: nth($station-logo, 4)
+
+/* ----------- Services (home) ----------- */
+#homeSections
+  @extend .blueBackground
+
+  .col-xs-12
+    @extend .isDecorativeAfter
+    border-left: 1px solid $gray
+    padding: 0
+    position: relative
+    text-align: center
+
+    &:after //circle for arrow
+      background: white
+      bottom: 45px
+      @include border-radius(50px)
+      height: 36px
+      left: 50%
+      margin: 0 0 0 -18px
+      width: 36px
+      z-index: 1
+
+    &:hover:after
+      background: $red
+
+  .col-xs-12:first-child
+    border-left: none
+
+  a
+    @extend .isDecorative
+    @extend .isDecorativeAfter
+    display: block
+    min-height: 435px
+    padding: 225px 0 95px
+    position: relative
+    @include transition(.4s)
+      
+
+    &:after //arrow
+      @extend .sprite-general
+      background-position: nth($arrow, 1) nth($arrow, 2)
+      width: nth($arrow, 3)
+      height: nth($arrow, 4)
+      bottom: 58px
+      left: 120px
+      z-index: 2 !important
+
+    &:hover:after
+      background-position: nth($white-arrow, 1) nth($white-arrow, 2)
+      width: nth($white-arrow, 3)
+      height: nth($white-arrow, 4)
+
+  h4
+    @include transition(.4s)
+
+  p
+    margin: 0 auto
+    max-width: 205px
+    @include transition(.4s)
+    @extend %asap
+    font-size: 11px
+
+a#homeSections-extinguishers
+  &:before
+    @extend .sprite-home
+    background-position: nth($extinguisher-home, 1) nth($extinguisher-home, 2)
+    width: nth($extinguisher-home, 3)
+    height: nth($extinguisher-home, 4)
+    top: 19px
+    left: 13px
+
+a#homeSections-equipment
+  &:before
+    @extend .sprite-home
+    background-position: nth($equipment-home, 1) nth($equipment-home, 2)
+    width: nth($equipment-home, 3)
+    height: nth($equipment-home, 4)
+    top: 85px
+    left: 50px
+
+a#homeSections-accesories
+  &:before
+    @extend .sprite-home
+    background-position: nth($accesories-home, 1) nth($accesories-home, 2)
+    width: nth($accesories-home, 3)
+    height: nth($accesories-home, 4)
+    top: 85px
+    left: 33px
+
+a#homeSections-signs
+  &:before
+    @extend .sprite-home
+    background-position: nth($signs-home, 1) nth($signs-home, 2)
+    width: nth($signs-home, 3)
+    height: nth($signs-home, 4)
+    top: 72px
+    left: 55px
+
+
+/* ----------- Contact (home) ----------- */
+
+#homeContact
+  color: $blue
+  padding: 65px 0 60px
+
+  h2, a
+    @extend %titilliumweb-semibold
+
+  h2
+    font-size: 15px
+    margin: 0 0 17px
+
+  a
+    color: $blue
+    font-size: 37px
+    text-transform: uppercase
+
+    span
+      display: inline-block
+      margin: 0 0 10px
+      vertical-align: middle
+
+    span:last-child
+      @extend .isDecorative
+      @extend .isDecorativeAfter
+      background: $yellow
+      font-size: 20px
+      margin: 0 0 0 25px
+      padding: 10px 60px 10px 13px
+      position: relative
+
+      &:before
+        background: $blue
+        height: 100%
+        right: 0
+        top: 0
+        width: 43px
+        z-index: 1
+
+      &:after
+        @extend .sprite-home
+        background-position: nth($white-phone, 1) nth($white-phone, 2)
+        width: nth($white-phone, 3)
+        height: nth($white-phone, 4)
+        right: 13px
+        top: 9px
+        z-index: 5
+
+
+    &:hover, &:focus, &:active
+      color: $red 
+      
+      span:last-child
+        background: lighten($yellow, 15)
+        color: $blue
+
+        &:before
+          background: darken($blue, 5)
+
+  .redButtonDarkArrow
+    color: white
+    display: block
+    font-size: 18px
+    margin: 20px 0 0 auto
+    padding-bottom: 20px
+    padding-top: 19px
+    width: 274px
+
+    &:before
+      top: 23px
+
+    &:hover
+      color: white
+
+/* ----------- How to ----------- */
+#howTo
+  @extend .isDecorative
+  counter-reset: howToList
+  padding: 80px 0 0
+  position: relative
+
+  h2, .row
+    position: relative
+    z-index: 5
+
+  h2
+    font-size: 34px
+    margin-bottom: 65px
+
+  h3
+    @extend .isDecorative
+    @extend .isDecorativeAfter
+    color: $blue
+    @extend %titilliumweb-semibold
+    font-size: 17px 
+    min-height: home-sprite-height(curved-square)
+    padding: 10px 0 0 50px
+    position: relative
+    z-index: 5
+
+    &:before, &:after
+      left: 0
+      top: 0
+
+    &:before
+      @extend .sprite-home
+      background-position: nth($curved-square, 1) nth($curved-square, 2)
+      width: nth($curved-square, 3)
+      height: nth($curved-square, 4)
+
+    &:after
+      color: white
+      content: "0"counter(howToList) !important
+      counter-increment: howToList
+      @extend %titilliumweb-semibold
+      font-size: 20px
+      width: nth($white-phone, 3)
+      height: nth($white-phone, 4)
+      padding: 7px 8px 0
+      text-align: center
+
+  p
+    @extend %glober-semibold
+    font-size: 9px
+    line-height: 1.35em
+    padding: 0 0 0 50px
+    position: relative
+    text-transform: uppercase
+    z-index: 5
+
+  .row
+    min-height: nth($extinguisher-home, 4)
+
+  &:before
+    @extend .sprite-home
+    background-position: nth($extinguisher-full, 1) nth($extinguisher-full, 2)
+    width: nth($extinguisher-full, 3)
+    height: nth($extinguisher-full, 4)
+    left: 50%
+    margin-left: -(nth($extinguisher-full, 3)/2)
+    position: absolute
+    top: 210px
+    z-index: 1
+
+  .col-xs-12
+
+    div
+      @extend .isDecorative
+      position: relative
+
+    &:first-child  //step 1 - remove
+      div
+        padding-bottom: nth($howto-remove, 4)
+        margin-top: 100px
+
+        &:before
+          @extend .sprite-home
+          background-position: nth($howto-remove, 1) nth($howto-remove, 2)
+          width: nth($howto-remove, 3)-10
+          height: nth($howto-remove, 4)
+          left: 50%
+          margin-left: -(nth($howto-remove, 3)/2)
+          top: 45px
+
+    &:last-child
+      div
+        &:first-child //step 2 - press
+          padding-bottom: nth($howto-press, 4)
+
+          &:before
+            @extend .sprite-home
+            background-position: nth($howto-press, 1) nth($howto-press, 2)
+            width: nth($howto-press, 3)
+            height: nth($howto-press, 4)
+            left: 50%
+            margin-left: -(nth($howto-press, 3)/2)
+            top: 85px
+
+        &:last-child //step 3 - point
+          padding-bottom: nth($howto-point, 3)
+          margin-top: 80px
+
+          &:before
+            @extend .sprite-home
+            background-position: nth($howto-point, 1) nth($howto-point, 2)
+            width: nth($howto-point, 3)
+            height: nth($howto-point, 4)
+            top: 80px
+
+#training
+  padding: 0 0 127px
+
+  h2
+    @extend %titilliumweb-semibold
+    font-size: 27px
+    max-width: 215px
+
+  p
+    line-height: 1.7em
+    margin: 22px 0 30px
+
+  .wrap
+    margin: 0 0 0 87px
+    max-width: 300px
+
+#trainingImg
+  @extend .isAnImage
+  @extend .sprite-home
+  background-position: nth($home-training, 1) nth($home-training, 2)
+  width: nth($home-training, 3)
+  height: nth($home-training, 4)
+  margin: 0 0 15px
+  max-width: 100%
+
+@import "../responsive/_home"

@@ -1,0 +1,33 @@
+$accesories-red: -319px -4px 70px 92px
+$accesories: -90px -4px 94px 125px
+$add: -345px -219px 17px 17px
+$back: -319px -219px 18px 19px
+$equipment-red: -192px -94px 88px 60px
+$equipment: -192px -4px 119px 82px
+$extinguisher-red: -319px -104px 52px 107px
+$extinguisher: -4px -4px 78px 159px
+$signs-red: -102px -171px 67px 67px
+$signs: -4px -171px 90px 90px
+
+=sprite-width($sprite)
+  width: nth($sprite, 3)
+
+=sprite-height($sprite)
+  height: nth($sprite, 4)
+
+=sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 1)
+  $sprite-offset-y: nth($sprite, 2)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+=sprite($sprite)
+  +sprite-position($sprite)
+  background-repeat: no-repeat
+  overflow: hidden
+  display: block
+  +sprite-width($sprite)
+  +sprite-height($sprite)
+
+.sprite-products
+  background-image: url('/img/sprites/_products.png')
+

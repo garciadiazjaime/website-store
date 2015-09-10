@@ -1,0 +1,487 @@
+@import "partials/_setup"
+@import "partials/_reset"
+
+/* ****************** GENERAL ************** */
+
+html, body
+  background: white
+
+body
+  @extend %asap
+  font-size: 14px 
+  letter-spacing: 0.07em
+  line-height: 1.4em
+  padding: 0
+
+a
+  font-weight: normal
+
+  &:hover, &:focus, &:active
+    color: $red
+    text-decoration: none
+
+em
+  font-style: normal
+
+h1, h2
+  color: $blue
+  @extend %titilliumweb-bold
+  font-size: 23px
+
+h2, h3, h4
+  text-transform: uppercase
+
+.container
+  padding: 0 40px
+
+.banner
+  height: 407px
+  min-width: 1024px
+  border: 1px solid black
+
+  .container
+    padding: 0 50px
+
+  h1
+    color: #fff
+    font-size: 70px
+    @extend %titilliumweb-bold
+    text-transform: uppercase
+    padding: 130px 0 10px 30px
+
+.diagonales-roja
+  @extend .sprite-general
+  background-position: nth($diagonal-red, 1) nth($diagonal-red, 2)
+  width: nth($diagonal-red, 3)
+  height: 272px
+  position: absolute
+  top: 154px
+
+.twoColumns-wraper-75
+  margin: 0 0 0 auto
+  width: $width-75
+  height: 100%
+
+.twoColumns-wraper-25
+  margin: 0 auto 0 0
+  width: $width-25
+  height: 100%
+
+.cta-products
+  height: 200px
+  width: 100%
+  background: $red
+  color: white
+  margin: 150px 0 30px
+
+  div
+    position: relative
+
+    h2
+      @extend %titilliumweb-bold
+      color: white
+      font-size: 45px
+      position: absolute
+      top: 50px
+      left: 150px
+
+    a
+      position: absolute
+      top: 80px
+      right: 150px
+
+
+/* ****************** LAYOUT ************** */
+#mainContent
+  padding: 0
+  
+section
+  max-width: 100%
+  overflow: hidden
+
+.container
+  max-width: 1024px
+
+.hasColorBackground
+  color: white
+
+.social
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+  li
+    display: inline-block
+    margin: 0 0 0 15px
+
+  li:first-child
+    margin-left: 0
+
+  a
+    background: $light-blue
+    @include border-radius(50px)
+    display: block
+    height: 24px
+    overflow: hidden
+    position: relative
+    @include transition(.4s)
+    width: 24px
+
+    &:hover, &:focus, &:active
+      background: darken(#0074c8, 10)
+      @include transition(.4s)
+
+  span:first-child
+    @extend .sprite-general
+    background-position: nth($facebook, 1) nth($facebook, 2)
+    width: nth($facebook, 3)
+    height: nth($facebook, 4)
+    display: block
+    margin: 7px auto 0
+    line-height: 5000em
+    overflow: hidden
+
+.button
+  color: white
+  display: inline-block
+  @extend %titilliumweb-bold
+  font-size: 13px
+  letter-spacing: 0.18em
+  padding: 12px 20px
+  position: relative
+  text-transform: uppercase
+
+  &:hover, &:focus, &:active
+    color: white
+
+.redButton
+  @extend .button
+  @extend .isDecorative
+  background: $red
+  min-width: 185px
+  padding: 12px 35px 12px 20px
+
+  &:hover, &:focus, &:active
+    background: darken($red, 10)
+    color: white
+
+  &:before
+    @extend .sprite-general
+    background-position: nth($white-arrow, 1) nth($white-arrow, 2)
+    width: nth($white-arrow, 3)
+    height: nth($white-arrow, 4)
+    right: 13px
+    top: 17px
+
+.redButtonDarkArrow
+  @extend .redButton
+
+  &:before
+    @extend .sprite-general
+    background-position: nth($blue-arrow, 1) nth($blue-arrow, 2)
+    width: nth($blue-arrow, 3)
+    height: nth($blue-arrow, 4)
+
+.blueButton
+  @extend .button
+  @extend .isDecorative
+  background: $dark-blue
+  min-width: 185px
+  padding: 12px 35px 12px 20px
+
+  &:hover, &:focus, &:active
+    background: $red
+
+    &:before
+      background-position: nth($blue-arrow, 1) nth($blue-arrow, 2)
+      width: nth($blue-arrow, 3)
+      height: nth($blue-arrow, 4)
+
+.blueButtonArrow
+  @extend .blueButton
+
+  &:before
+    @extend .sprite-general
+    background-position: nth($arrow, 1) nth($arrow, 2)
+    width: nth($arrow, 3)
+    height: nth($arrow, 4)
+    right: 16px
+    top: 16px
+
+.hasColorBackground
+  color: white
+
+  a
+    color: white
+
+.blueBackground
+  @extend .hasColorBackground
+  background: $blue
+
+/* ****************** HEADER ************** */  
+header, #header
+  background: $blue
+  color: white
+  font-size: 13px
+  left: 0
+  letter-spacing: 0.07em
+  min-height: 80px
+  overflow: hidden
+  top: 0
+  width: 100%
+  z-index: 50
+
+  .container
+    position: relative
+    text-align: right
+    z-index: 2
+
+  .social
+    position: absolute
+    right: 15px
+    top: 12px
+    z-index: 5
+
+  a
+    color: white
+    text-transform: uppercase
+
+    &:hover, &:focus, &:active
+      color: $yellow
+
+#header
+  @extend .isDecorative
+  &:before
+    background: white
+    height: 80px
+    position: relative
+    right: 50%
+    margin: 0 250px 0 0
+    top: 0
+    width: 100% 
+
+#header.fixed
+  position: fixed
+  background: #fff
+  min-height: 50px
+  .navbar-nav
+    a
+      padding-top: 18px
+      color: #263851
+      @extend %titilliumweb
+  .mainLogoStyle
+    background-position: nth($chibilogo, 1) nth($chibilogo, 2)
+    width: nth($chibilogo, 3)
+    height: nth($chibilogo, 4)
+  .navbar-brand
+    top: 7px
+.mainLogoStyle
+  @extend .sprite-general
+  background-position: nth($logo, 1) nth($logo, 2)
+  width: nth($logo, 3)
+  height: nth($logo, 4)
+  display: block
+  line-height: 5000em
+  overflow: hidden
+
+.navbar-brand
+  @extend .mainLogoStyle
+  background-color: #fff
+  left: 30px
+  margin-left: 10px !important
+  opacity: 1
+  position: absolute
+  top: 13px
+  z-index: 5
+
+  &:hover, &:focus, &:active
+    opacity: 0.7
+    @include transition(.4s)
+
+.navbar-nav > li
+  float: none
+
+.navbar-nav > li > a
+  padding: 30px 0 13px
+
+.navbar-nav
+  padding: 0 113px 0 205px
+  text-align: center
+  width: 100%
+
+  a
+    @extend %titilliumweb-semibold
+    color: white
+    display: block
+    text-align: center
+
+    &:hover, &:focus, &:active
+      color: $yellow
+
+  li
+    display: inline-block
+    margin: 0 0 0 45px
+
+  li:first-child
+    margin-left: 0
+
+.navbar-default
+  .navbar-nav > li > a:hover, .navbar-nav > li > a:focus
+    color: $yellow
+
+  .navbar-nav > li:last-child > a:hover, .navbar-nav > li:last-child > a:focus
+    color: white
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus
+  color: $yellow
+
+#shopping-cart
+  height: 22px
+  margin: 0
+  position: absolute
+  right: 55px
+  top: 14px
+
+  span
+    display: inline-block
+    vertical-align: middle
+
+  span:last-child
+    @extend .isDecorative
+    background: white
+    @include border-radius(50px)
+    height: 22px
+    line-height: 5000em
+    margin: 0 0 0 5px
+    overflow: hidden
+    position: relative
+    @include transition(.4s)
+    width: 22px
+
+    &:before
+      @extend .sprite-general
+      background-position: nth($car, 1) nth($car, 2)
+      width: nth($car, 3)
+      height: nth($car, 4)
+      left: 50%
+      margin: 0
+      margin-left: -8px
+      top: 6px
+
+  &:hover, &:focus, &:active
+    span:last-child
+      background: $yellow
+      @include transition(.4s)
+
+header #shopping-cart, #header #shopping-cart
+  &:hover, &:focus, &:active
+    color: white
+
+
+/* ****************** FOOTER ************** */
+footer, #footer
+  background: $blue
+  color: white
+  padding: 50px 0 0
+
+  span
+    font-size: 13px
+
+  a
+    color: #636363
+    display: inline-block
+    padding: 0 5px
+    text-transform: uppercase
+
+    &:hover, &:focus, &:active
+      color: $yellow
+  ul
+    margin: 0 0 15px
+    padding: 100px 0 0
+
+    ul
+      margin-bottom: 0
+      padding: 0
+
+  ul.social
+    margin: 10px 0 15px
+    padding: 0
+
+  li
+    display: inline-block
+    vertical-align: top
+    width: 25%
+
+    li
+      display: block
+      width: 100%
+
+      a
+        font-size: 10px
+
+  h5
+    font-size: 12px
+    margin: 0 0 20px
+
+    a
+      color: white
+
+  p
+    max-width: 190px
+
+
+  #addressColumn
+    font-size: 13px
+
+    a
+      color: white
+      padding: 0
+
+      &:hover, &:focus, &:active
+        color: $yellow
+
+  .email
+    display: block
+    text-transform: none
+
+#footerLogo
+  @extend .mainLogoStyle
+  margin: 0 0 50px
+
+
+#footerCredits
+  background: #0C1116
+  color: #545454
+  font-size: 10px
+  line-height: 1em
+  padding: 12px 0 10px
+
+  a
+    color: #545454
+    
+    &:hover, &:focus, &:active
+      color: white
+
+  p
+    margin: 0 0 5px
+    max-width: 100%
+
+  .col-xs-12:last-child
+    text-align: right
+
+/* ****************** SECTIONS ************** */
+
+@import "partials/sections/_home"
+@import "partials/sections/_aboutus"
+@import "partials/sections/_products"
+@import "partials/sections/_training"
+@import "partials/sections/_contact"
+@import "partials/sections/_block"
+
+@import "partials/responsive/_general.sass"
+@import "partials/responsive/_header.sass"
+@import "partials/responsive/_footer.sass"
+
+/* ****************** EXTERNALS ************** */
+
+@import "externals/_store.sass"

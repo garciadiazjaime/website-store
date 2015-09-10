@@ -1,0 +1,25 @@
+.iconHolder
+	position: relative
+
+=hasDecorativeSelector
+	content: " "
+	display: block
+	position: absolute
+	z-index: 1
+
+.isDecorative
+	&:before
+		+hasDecorativeSelector
+
+.isDecorativeAfter
+	&:after
+		+hasDecorativeSelector
+
+.isAnImage
+	display: block
+	line-height: 5000em
+	overflow: hidden
+	
+.img
+	@extend .isAnImage
+	width: 100%

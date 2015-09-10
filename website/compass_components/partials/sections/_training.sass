@@ -1,0 +1,72 @@
+#training-section
+  .banner-products
+    background: url(/img/training/banner.jpg) no-repeat
+    background-size: cover
+
+  .intro
+
+    a
+      @extend .blueButtonArrow
+      top: 10px 
+
+    .first-panel
+      padding: 55px 50px 0 0
+      
+      p
+        @extend %titilliumweb-semibold
+        color: $red
+        font-size: 27px
+        line-height: 125%
+
+    .second-panel
+      padding: 55px 0 0 0
+
+      p
+        text-align: justify
+        line-height: 165%
+        margin-left: -40px
+  
+  .workshops
+    padding-top: 50px
+
+    h1
+      padding: 15px 0 0 0
+      @extend %titilliumweb-bold
+      font-size: 23px
+      text-transform: uppercase
+      color: $blue
+
+    p
+      @extend %asap
+      padding-top: 15px
+      text-align: justify
+      color: $paragraph-gray
+      font-size: 14px
+      line-height: 125%
+      max-width: 410px
+
+    a
+      @extend .blueButtonArrow
+      margin: 15px 0 30px 0
+
+    .level-block
+      padding-top: 20px
+
+    .level-1-image
+      @extend .sprite-training
+      background-position: nth($level1, 1) nth($level1, 2)
+      width: nth($level1, 3)
+      height: nth($level1, 4)
+      display: inline-block
+      position: relative
+
+    .level-2-image
+      @extend .sprite-training
+      background-position: nth($level2, 1) nth($level2, 2)
+      width: nth($level2, 3)
+      height: nth($level2, 4)
+      display: inline-block
+      position: relative
+
+
+    

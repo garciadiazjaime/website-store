@@ -1,0 +1,98 @@
+/* *************** HOME - Responsive *************** */
+
+@media screen and (max-width: 991px)
+	#homeSections
+		.col-xs-12
+			border-left: none
+
+	#homeContact
+		a
+			span:last-child
+				margin: 10px 0 0
+
+@media screen and (max-width: 799px)
+	#homeCarousel
+		height: 490px
+
+		.item
+			height: 100%
+
+		.common
+			p
+				margin: 0 0 10px
+				position: static
+
+		.stationLogo
+			position: static
+
+		p
+			max-width: 100%
+
+		h3
+			font-size: 50px
+
+			span
+				display: inline-block
+
+@media screen and (max-width: 767px)			
+	#homeSections
+		p
+			max-width: 255px
+
+		.col-xs-12
+			border-top: 1px solid $gray
+
+			&:first-child
+				border: none
+
+	#homeContact
+		.redButtonDarkArrow
+			margin-left: 0
+
+		a
+			span:last-child
+				display: block
+				max-width: 170px
+
+	#howTo
+		h2
+			margin-bottom: 15px
+
+		&:before
+			left: auto
+			right: -120px
+
+		.col-xs-12
+			&:first-child
+				div
+					margin-top: 0
+
+			&:first-child
+				div:before
+					left: 0
+					margin-left: 10px
+
+			&:last-child
+				div:first-child
+					&:before
+						left: 0
+						margin-left: 10px
+
+	#training
+		.wrap
+			margin: 0
+			max-width: 100%
+
+@media screen and (max-width: 519px)
+	#howTo
+		&:before
+			display: none
+
+@media screen and (max-width: 500px)
+	.carousel-indicators
+		margin: 0 0 0 43%
+
+@media screen and (max-width: 419px)
+	#homeCarousel
+		h3	
+			font-size: 40px

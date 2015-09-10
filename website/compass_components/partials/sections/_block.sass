@@ -1,0 +1,44 @@
+@import "partials/_setup"
+
+/* ****************** BLOCK ************** */
+/* --------------- Commitment block (home, about us) --------------- */
+#commitment
+  @extend .hasColorBackground
+  background: url(#{$img}block-commitment.jpg) center no-repeat
+  background-size: cover
+  min-height: 360px
+  padding: 96px 0 68px
+  position: relative
+  text-align: center
+
+  .container
+    margin: 0 auto
+    max-width: 280px
+
+  p
+    @extend %titilliumweb
+    font-size: 21px
+    text-transform: uppercase
+
+  em
+    @extend .isAnImage
+    margin: 16px auto 15px
+    @extend .sprite-home
+    background-position: nth($station-sign, 1) nth($station-sign, 2)
+    width: nth($station-sign, 3)
+    height: nth($station-sign, 4)
+
+@import "../responsive/_block"
+
+/* --------------- basic block (contact) --------------- */
+.basic-block
+  background: $dark-blue
+  min-height: 122px
+  text-align: center
+  text-transform: uppercase
+  color: white
+  padding-top: 13px
+  @extend %titilliumweb-bold
+
+  h1
+    font-size: 50px

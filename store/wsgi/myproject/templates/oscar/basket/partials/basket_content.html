@@ -1,0 +1,131 @@
+{% load i18n %}
+{% load thumbnail %}
+{% load currency_filters %}
+{% load purchase_info_tags %}
+{% load widget_tweaks %}
+
+{% if not basket.is_empty %}
+    {% block basket_form_headers %}
+    <div class="container">
+        <div class="basket-title hidden-xs">
+            <div class="row">
+                <h2 class="col-sm-6 h3">{% trans "Items" %}</h2>
+                <p class="col-sm-3 h3">{% trans "Quantity" %}</p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block basket_form_main %}
+        <div class="container">
+            <form action="." method="post" class="basket_summary" id="basket_formset">
+                {% csrf_token %}
+                {{ formset.management_form }}
+
+                {% for form in formset %}
+                    {% with line=form.instance product=form.instance.product %}
+                        {% purchase_info_for_line request line as session %}
+                        <div class="basket-items">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    {{ form.id }}
+                                    {% with image=product.primary_image %}
+                                        {% thumbnail image.original "100x100" upscale=False as thumb %}
+                                            <a href="{{ product.get_absolute_url }}">
+                                                <img class="thumbnail" src="{{ thumb.url }}" alt="{{ product.get_title }}"/>
+                                            </a>
+                                        {% endthumbnail %}
+                                    {% endwith %}
+                                </div>
+                                <div class="col-sm-4">
+                                    <h3><a href="{{ product.get_absolute_url }}">{{ line.description }}</a></h3>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="checkout-quantity">
+                                        <div class="input-group  {% if form.errors %}error{% endif %}">
+                                            {% render_field form.quantity class+="form-control" %}
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="submit" data-loading-text="{% trans 'Updating...' %}">{% trans "Update" %}</button>
+                                        </span>
+                                        </div>
+                                    </div>
+                                        <div>
+                                            <a href="#" data-id="{{ forloop.counter0 }}" data-behaviours="remove" class="inline">{% trans "Remove" %}</a>
+                                            <div style="display:none">
+                                                {{ form.DELETE }}
+                                            </div>
+                                            {% for field_errors in form.errors.values %}
+                                                {% for error in field_errors %}
+                                                    <span class="error-block"><i class="icon-exclamation-sign"></i> {{ error }}</span>
+                                                {% endfor %}
+
+                                            {% endfor %}
+                                        </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endwith %}
+                {% endfor %}
+            </form>
+        </div>
+    {% endblock %}
+
+
+    {% block formactions %}
+        <div class="container">
+            <div class="form-group clearfix">
+                <div class="row">
+                    <div class="col-sm-2 col-sm-offset-6">
+                        {% trans "Name" %}
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 col-sm-offset-6">
+                        {% trans "Telephone" %}
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 col-sm-offset-6">
+                        {% trans "Email" %}
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2 col-sm-offset-6">
+                        {% trans "Messaje" %}
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-8">
+                        <a href="#" class="blueButtonArrow pull-right">{% trans "Get a quote" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock formactions %}
+
+{% else %}
+    {% block emptybasket %}
+        <p class="container">
+            {% trans "Your basket is empty." %}
+            <a href="{{ homepage_url }}">{% trans "View products" %}</a>
+        </p>
+    {% endblock %}
+{% endif %}

@@ -1,0 +1,115 @@
+#product-section
+  .banner-products
+    background: url(/img/products/banner.jpg) no-repeat
+    background-size: cover
+
+    a
+      @extend %titilliumweb
+      @extend .redButton
+      margin: 15px 0 0 35px
+
+  .product-category
+    height: 327px
+
+    h2
+      @extend %titilliumweb-black
+      color: white
+      font-size: 45px
+      position: relative
+      top: 108px
+      left: 25%
+
+    i
+      position: relative
+    
+    .twoColumns-wraper-25
+      padding: 50px 0 0
+
+      ul
+        color: $red
+
+        li
+          padding: 5px 0
+
+          span
+            @extend %asap-bold
+            color: $alter-gray
+            text-transform: uppercase
+            font-size: 13px
+
+      a
+        @extend .blueButtonArrow
+        margin: 10px 0 0 40px
+
+    .category-extinguisher
+      background: $red
+      height: 100%
+
+      i
+        @extend .sprite-products
+        background-position: nth($extinguisher, 1) nth($extinguisher, 2)
+        width: nth($extinguisher, 3)
+        height: nth($extinguisher, 4)
+        display: block
+        top: -20px
+
+    .category-equipment
+      height: 100%
+
+      h2
+        color: $dark-blue
+
+      i
+        @extend .sprite-products  
+        background-position: nth($equipment, 1) nth($equipment, 2)
+        width: nth($equipment, 3)
+        height: nth($equipment, 4)
+        display: block
+        top: 35px
+
+    .category-accesories
+      height: 100%
+      background: $dark-blue
+
+      h2
+        color: white
+
+      i
+        @extend .sprite-products  
+        background-position: nth($accesories, 1) nth($accesories, 2)
+        width: nth($accesories, 3)
+        height: nth($accesories, 4)
+        display: block
+        top: 15px
+
+    .category-signs
+      height: 100%
+      background: $yellow
+
+      h2
+        color: $dark-blue
+
+      i
+        @extend .sprite-products  
+        background-position: nth($signs, 1) nth($signs, 2)
+        width: nth($signs, 3)
+        height: nth($signs, 4)
+        display: block  
+        top: 32px
+
+  .download-section
+    height: 327px
+    padding: 50px 0 0 35px
+
+    h3
+      @extend %titilliumweb-bold
+      color: $dark-blue
+      font-size: 23px
+      text-transform: uppercase
+
+    p
+      padding: 30px 0
+
+    a
+      @extend .blueButtonArrow
+

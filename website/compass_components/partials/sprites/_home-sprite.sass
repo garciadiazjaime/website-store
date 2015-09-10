@@ -1,0 +1,37 @@
+$accesories-home: -4px -741px 221px 114px
+$curved-square: -1053px -296px 39px 37px
+$equipment-home: -233px -741px 167px 114px
+$extinguisher-full: -4px -4px 470px 563px
+$extinguisher-home: -482px -282px 235px 214px
+$home-training: -482px -4px 460px 270px
+$howto-point: -4px -575px 279px 158px
+$howto-press: -950px -139px 118px 149px
+$howto-remove: -725px -282px 120px 197px
+$signs-home: -950px -4px 145px 127px
+$station-logo: -950px -296px 95px 96px
+$station-sign-small: -482px -504px 290px 50px
+$station-sign: -291px -575px 392px 68px
+$white-phone: -1076px -139px 16px 22px
+
+=sprite-width($sprite)
+  width: nth($sprite, 3)
+
+=sprite-height($sprite)
+  height: nth($sprite, 4)
+
+=sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 1)
+  $sprite-offset-y: nth($sprite, 2)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+=sprite($sprite)
+  +sprite-position($sprite)
+  background-repeat: no-repeat
+  overflow: hidden
+  display: block
+  +sprite-width($sprite)
+  +sprite-height($sprite)
+
+.sprite-home
+  background-image: url('/img/sprites/_home.png')
+

@@ -1,0 +1,105 @@
+/* *************** HEADER - Responsive *************** */
+
+/* -------- NAVIGATION --------- */
+@media screen and (max-width: 991px)
+	#header
+		&:before
+			margin: 0 170px 0 0
+
+	.navbar-nav
+		li
+			margin: 0 0 0 10px
+
+@media screen and (max-width: 767px)
+	#header
+		&:before
+			left: 0
+			margin: 0
+			width: 220px
+
+	header, #header
+		.container
+			padding: 0
+
+		a
+			color: white
+
+	.navbar-toggle
+		margin: 20px 130px 25px 0
+	.fixed
+		.navbar-toggle
+			margin: 8px 130px 0 0
+
+	.navbar-nav
+		margin: 0
+		padding: 0
+
+		li
+			display: block
+			margin: 0
+
+		a
+			background: white
+			color: $blue
+			display: block
+
+			&:hover, &:focus, &:active
+				background: $yellow
+				color: white
+
+	.navbar-default
+		.navbar-collapse
+			padding: 0
+
+		.navbar-nav > li > a:hover, .navbar-nav > li > a:focus
+			color: white
+
+	.navbar-default .navbar-nav > li > a
+		padding: 25px 0
+
+	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus
+		background: $yellow
+
+	header, #header
+		.navbar-nav
+			a
+				color: $blue
+				&:hover, &:focus, &:active
+					color: white
+
+@media screen and (max-width: 399px)
+	.navbar-brand
+		left: 10px
+
+	#header:before
+		width: 195px
+
+	.navbar-toggle
+		margin: 20px 115px 25px 0
+
+	#shopping-cart
+		right: 45px
+
+@media screen and (max-width: 349px)
+	.navbar-brand
+		left: 4px
+
+	#header:before
+		width: 180px
+
+	header, #header
+		.social
+			right: 3px
+
+	#shopping-cart
+		right: 33px
+
+	.navbar-toggle
+		margin: 20px 95px 25px 0
+
+@media screen and (max-width: 307px)
+	.navbar-toggle
+		width: 36px
+		
+		.icon-bar
+			width: 15px

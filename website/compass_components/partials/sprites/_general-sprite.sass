@@ -1,0 +1,31 @@
+$arrow: -90px -63px 7px 10px
+$blue-arrow: -68px -81px 9px 12px
+$car: -68px -63px 14px 10px
+$chibilogo: -25px -63px 35px 34px
+$diagonal-red: -4px -63px 13px 272px
+$facebook: -120px -63px 5px 9px
+$logo: -4px -4px 173px 51px
+$white-arrow: -105px -63px 7px 9px
+
+=sprite-width($sprite)
+  width: nth($sprite, 3)
+
+=sprite-height($sprite)
+  height: nth($sprite, 4)
+
+=sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 1)
+  $sprite-offset-y: nth($sprite, 2)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+=sprite($sprite)
+  +sprite-position($sprite)
+  background-repeat: no-repeat
+  overflow: hidden
+  display: block
+  +sprite-width($sprite)
+  +sprite-height($sprite)
+
+.sprite-general
+  background-image: url('/img/sprites/_general.png')
+
